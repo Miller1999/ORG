@@ -1,0 +1,15 @@
+.boton{
+    background-color: var(--morado);
+    border-radius: 10px;
+    font-weight: 700;
+    font-family: "Montserrat";
+    font-size: 18px;
+    padding: 24px 32px;
+    border: none;
+    color: white;
+    margin: 32px 0px;
+    cursor: pointer;
+}
+.boton:hover{
+    color: var(--agua);
+}
