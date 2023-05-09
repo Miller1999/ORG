@@ -4,16 +4,25 @@ import CampoTexto from "../CampoTexto/CampoTexto"
 import ListaOpciones from "../ListaOpciones/ListaOpciones"
 import Boton from "../Boton/Boton"
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     const [nombre,actualizarNombre] = useState("")
     const [puesto,actualizarPuesto] = useState("")
     const [foto,actualizarFoto] = useState("")  
     const [equipo,actualizarEquipo] = useState("")
+
+    const {registrarColaborador} = props
     
     //e.preventDefault -> evitar el comportamiento default de e siendo e el evento 
     const  envio = (e) => {
         e.preventDefault()
+        let datosAEnviar = {
+            nombre,
+            puesto,
+            foto,
+            equipo
+        }
+        registrarColaborador(datosAEnviar)
     }
 
     return <section className="formulario">
@@ -43,6 +52,7 @@ const Formulario = () => {
             <ListaOpciones 
                 valor={equipo}
                 actualizarEquipo = {actualizarEquipo}
+                equipos = {props.equipos}
             />
             <Boton>
                 Crear
