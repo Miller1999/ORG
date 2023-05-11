@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Formulario from './components/Formulario/Formulario'
 import MiOrg from './components/MiOrg/MiOrg';
 import Equipo from './components/Equipo/Equipo';
+import Footer from './components/Footer/Footer';
     //* Estas {} son interpretadas como codigo JS por lo tanto se pueden declarar variables, hacer operaciones, etc. Todo lo que se puede hacer en un JS
     //* Los componentes creados es recomendado colocarlo con primera mayuscula para identificar que es un componente REACT
     //? Ternario --> condicion ? opcion verdadera : opcion falsa
@@ -67,9 +68,10 @@ function App() {
     <MiOrg cambiarMostrar={cambiarMostrar}/>
     {
       equipos.map((equipo) => {
-        return <Equipo datos={equipo} key={equipo.nombre}/>
+        return <Equipo datos={equipo} key={equipo.nombre} colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.nombre)}/>
       })
     }
+    <Footer/>
     </div>
   );
 }
