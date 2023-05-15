@@ -18,6 +18,7 @@ function App() {
     foto: "https://github.com/harlandlohora.png",
     nombre: "Harland Lohora",
     puesto: "Instructor",
+    fav:true
   },
   {
     id: uuid(),
@@ -25,6 +26,7 @@ function App() {
     foto: "https://github.com/genesysaluralatam.png",
     nombre: "Genesys Rondón",
     puesto: "Desarrolladora de software e instructora",
+    fav:false
   },
   {
     id: uuid(),
@@ -32,6 +34,7 @@ function App() {
     foto: "https://github.com/JeanmarieAluraLatam.png",
     nombre: "Jeanmarie Quijada",
     puesto: "Instructora en Alura Latam",
+    fav:false
   },
   {
     id: uuid(),
@@ -39,6 +42,7 @@ function App() {
     foto: "https://github.com/christianpva.png",
     nombre: "Christian Velasco",
     puesto: "Head de Alura e Instructor",
+    fav:true
   },
   {
     id: uuid(),
@@ -46,8 +50,8 @@ function App() {
     foto: "https://github.com/JoseDarioGonzalezCha.png",
     nombre: "Jose Gonzalez",
     puesto: "Dev FullStack",
+    fav:false
   }])
-
   const [equipos, actualizarEquipos] = useState([
     {
       id: uuid(),
@@ -93,7 +97,15 @@ function App() {
     }
   ])
 
-
+  const like = (id) => {
+    const colaboradoresActualizados = colaboradores.map((colaborador) =>{
+      if(colaborador.id === id){
+        colaborador.fav = !colaborador.fav
+      }
+      return colaborador
+    })
+    actualizarColaboradores(colaboradoresActualizados)
+  }
   //Ternario --> condicion ? seMuestra : noSeMuestra
   // condicion && seMuestra
 
@@ -156,6 +168,7 @@ function App() {
           colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
           eliminarColaborador={eliminarColaborador}
           actualizarColor={actualizarColor}
+          like={like}
         />
         )
       }

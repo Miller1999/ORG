@@ -4,8 +4,8 @@ import hexToRgba from "hex-to-rgba"
 
 const Equipo = (props) => {
 //*Destructuracion
-const {colorPrimario,colorSecundario,titulo,id} = props.datos
-const {colaboradores, eliminarColaborador, actualizarColor} = props
+const {colorPrimario,titulo,id} = props.datos
+const {colaboradores, eliminarColaborador, actualizarColor, like} = props
     //Los estilos en linea dentro de JSX se trabajan como objetos de la siguiente manera
 //Las propiedades del CSS se transforman de background-color -> backgroundColor en JSX
     const estilos = {
@@ -24,7 +24,13 @@ const {colaboradores, eliminarColaborador, actualizarColor} = props
         <h3 style={{borderColor: colorPrimario}}>{titulo}</h3>
         <div className="colaboradores">
             {
-                colaboradores.map((colaborador,index) => <Colaborador datos={colaborador} key={index} colorPrimario={colorPrimario}  eliminarColaborador={eliminarColaborador}/>)
+                colaboradores.map((colaborador,index) => <Colaborador 
+                datos={colaborador} 
+                key={index} 
+                colorPrimario={colorPrimario}  
+                eliminarColaborador={eliminarColaborador}
+                like={like}
+                />)
             }
         </div>
     </section>
