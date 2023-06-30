@@ -12,6 +12,8 @@ Se desarrollo con el fin de aprender las bases de React, y como cambia respecto 
   - [Licencia](#licencia)
   - [Autor](#autor)
 ### Demostraciones
+La pagina se puede ver en el link a continuacion
+## [ORG](https://org-sandy-psi.vercel.app/) 
 Las diferentes pantallas y funcionamiento del proyecto se muestran a continuación:
 ### Principal
 ![Image text](https://github.com/Miller1999/ORG/blob/main/vistas/Principal.png)
